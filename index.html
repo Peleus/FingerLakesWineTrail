@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+      
+    <!--<pre data-bind="text: ko.toJSON($root, null, 2)"></pre>-->
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Finger Lakes Wine Trail</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Finger Lakes Wine Trail</a>
+          </div>
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="row">   
+        <div class="jumbotron JumboBackground">
+            <h1 class="whiteText">Finger Lakes Wine Trail</h1>
+            <p class="whiteText">Discover the best bottles of wine from the Finger Lakes Wine Region</p>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div id="map">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="listFrame">
+                    <p>Search: <input data-bind="textInput: placeFilter, valueUpdate: 'afterkeydown'"/></p>
+                    <h3>Try a Sample...</h3>
+                    <div >
+                        <!--Template-->
+                        <div data-bind="foreach: displayPlaces" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" data-bind="attr:{id: 'heading_' + $index()}" role="tab">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-bind="click:playAnimation, text:name, attr:{href: '#collapse_' + $index(),'aria-controls':'collapse_' + $index()}" data-toggle="collapse" data-parent="#accordion" aria-expanded="true">Collapsible Group Item #1</a>
+                                    </h4>
+                                </div>
+                                <div data-bind="attr:{id: 'collapse_' + $index(),'aria-labelledby':'heading_' + $index()}" class="panel-collapse collapse" role="tabpanel">
+                                    <div class="panel-body">
+                                        <p>Rating: <span data-bind="text:rating"></span></p>
+                                        <a data-bind="attr:{href:productData.Vineyard.Url}"><p>Try Products from this Winery...</p></a>
+                                        <p>We Recommend:</p>
+                                        <p data-bind="text:productData.Name"></p>
+                                        <div class="center-block">
+                                            <a data-bind="attr:{href: productData.Url}">
+                                                <img width="128px" height="128px" data-bind="attr:{src: productData.Labels[0].Url}"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of template-->
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT0PVrYWbakZV2CWsz6Qy_rGUEGJsRqQU&libraries=places&callback=initMap" async defer></script>
+        <script src="http://services.wine.com/api/beta2/service.svc/json/catalog?apikey=0986681690919c5baef1226ff293310f&size=25" async defer></script>
+      <br/>
+        <br/>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Finger Lakes Wine Trail</a>
+          </div>
+        </div><!--/.container-fluid -->
+      </nav>
+      </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/knockout-3.4.0.debug.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/viewmodel.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
