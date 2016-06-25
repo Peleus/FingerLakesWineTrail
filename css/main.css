@@ -1,28 +1,22 @@
-#map{
-    width:100%;
-    height:500px;
+#map {
+    width: 100%;
+    height: 500px;
 }
-
-.JumboBackground{
+.JumboBackground {
     background-image: url(/images/FingerLakesVineyard1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.whiteText{
+.whiteText {
     color: white !important;
 }
-
 @media (min-width: 991px) {
-    .jumbotron{
-        height:450px !important;
+    .jumbotron {
+        height: 450px !important;
     }
-
 }
-
 @media (min-width: 686px) {
-    .jumbotron{
-        height:250px;
+    .jumbotron {
+        height: 250px;
     }
-
 }
