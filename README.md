@@ -4,7 +4,7 @@
 
 Finger Lakes Wine Trail is a working prototype for a site with a focus on the Finger Lakes Wine Region. It uses jQuery Ajax calls to gather data on several wieeries from both Google Maps services as well as Wine.com.
 
-The site uses Knockout for the ViewModel data managment. Main.js under the JS directory contains all of the custom code for the site. 
+The site uses Knockout for the ViewModel data managment. ViewModel.js under the JS directory contains all of the custom code for the site. 
 
 ## Usage
 

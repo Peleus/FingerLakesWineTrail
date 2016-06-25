@@ -1,4 +1,4 @@
-/******************************************************************Wine API*************************************************************************/
+/************************************************************Wine API and Product List*************************************************************************/
 var wineData = [];
 var productList = [];
 
@@ -55,8 +55,6 @@ var service;
 var globalResults;
 var placeCount = 0;
 var markerArray = [];
-
-
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
