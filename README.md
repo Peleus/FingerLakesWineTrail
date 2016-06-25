@@ -1,4 +1,4 @@
-# Finger lakes Wine Trail
+# Finger Lakes Wine Trail
 
 ## About
 
