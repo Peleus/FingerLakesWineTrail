@@ -13,41 +13,46 @@ function buildProductList() {
         productList[0] = data.Products.List[0];
         console.log("Found wine data for " + productList[0].Vineyard.Name);
     }).error(function(e) {
-        console.log('Wine data not found.')
+        console.log('Wine data not found.');
+        wineAPIError();
     });
     $.getJSON(wineData[1], function(data) {
         productList[1] = data.Products.List[0];
         console.log("Found wine data for " + productList[1].Vineyard.Name);
     }).error(function(e) {
-        console.log('Wine data not found.')
+        console.log('Wine data not found.');
+         wineAPIError();
     });
     $.getJSON(wineData[2], function(data) {
         productList[2] = data.Products.List[0];
         console.log("Found wine data for " + productList[2].Vineyard.Name);
     }).error(function(e) {
-        console.log('Wine data not found.')
+        console.log('Wine data not found.');
+         wineAPIError();
     });
     $.getJSON(wineData[3], function(data) {
         productList[3] = data.Products.List[0];
         console.log("Found wine data for " + productList[3].Vineyard.Name);
     }).error(function(e) {
-        console.log('Wine data not found.')
+        console.log('Wine data not found.');
+         wineAPIError();
     });
     $.getJSON(wineData[4], function(data) {
         productList[4] = data.Products.List[0];
         console.log("Found wine data for " + productList[4].Vineyard.Name);
     }).error(function(e) {
-        console.log('Wine data not found.')
+        console.log('Wine data not found.');
+         wineAPIError();
     });
 }
 
 buildProductList();
 
 function addProductData(placeData) {
-    for (j = 0; j < productList.length; j++) {
-        searchName = placeData.name;
-        firstWordSearchName = searchName.split(" ", 1);
-        firstWordVineyardName = productList[j].Vineyard.Name.split(" ", 1);
+    for (var j = 0; j < productList.length; j++) {
+        var searchName = placeData.name;
+        var firstWordSearchName = searchName.split(" ", 1);
+        var firstWordVineyardName = productList[j].Vineyard.Name.split(" ", 1);
 
         if (firstWordSearchName.toString() == firstWordVineyardName.toString()) {
             return productList[j];
@@ -56,14 +61,16 @@ function addProductData(placeData) {
     return 'Not Found';
 }
 
+function wineAPIError(){
+    alert("Wine API Error.");
+}
+
 
 /**********************************************************Google Controller*********************************************/
 
 var map;
 var infoWindow;
 var service;
-var globalResults;
-var placeCount = 0;
 var markerArray = [];
 
 function initMap() {
@@ -110,7 +117,7 @@ var locations = [{
 }];
 
 function getLocations() {
-    for (i = 0; i < locations.length; i++) {
+    for (var i = 0; i < locations.length; i++) {
         service.getDetails({
             placeId: locations[i].locationID
         }, function(place, status) {
@@ -186,6 +193,10 @@ function toggleBounce(marker) {
             marker.setAnimation(null);
         }, 1400);
     }
+}
+
+function googleError(){
+    alert("Error handling Google Maps Data");
 }
 
 /*************************************************************Knockout View Model*******************************************************************/

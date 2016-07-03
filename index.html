@@ -7,9 +7,6 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-      
-    <!--<pre data-bind="text: ko.toJSON($root, null, 2)"></pre>-->
-    <link rel="icon" href="../../favicon.ico">
 
     <title>Finger Lakes Wine Trail</title>
 
@@ -41,12 +38,6 @@
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="#">Finger Lakes Wine Trail</a>
           </div>
         </div><!--/.container-fluid -->
@@ -97,19 +88,11 @@
                 </div>
             </div>
         </div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT0PVrYWbakZV2CWsz6Qy_rGUEGJsRqQU&libraries=places&callback=initMap" async defer></script>
-        <script src="http://services.wine.com/api/beta2/service.svc/json/catalog?apikey=0986681690919c5baef1226ff293310f&size=25" async defer></script>
       <br/>
         <br/>
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="#">Finger Lakes Wine Trail</a>
           </div>
         </div><!--/.container-fluid -->
@@ -127,5 +110,6 @@
     <script src="js/viewmodel.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT0PVrYWbakZV2CWsz6Qy_rGUEGJsRqQU&libraries=places&callback=initMap" onerror="googleError()" async defer ></script>
+    </body>
 </html>

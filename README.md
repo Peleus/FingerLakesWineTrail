@@ -8,6 +8,8 @@ The site uses Knockout for the ViewModel data managment. ViewModel.js under the 
 
 ## Usage
 
+You will need to download the site to your local system and open the Index.html file in the top directory with your web browser. Note that this site wont run through the github web service because of security issues with wine.com.
+
 Click on a map marker or highlight a winery from the list to discover new bottle of the best wine from this region of New York State.
 
 ## Next Steps

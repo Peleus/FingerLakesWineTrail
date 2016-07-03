@@ -3,7 +3,7 @@
     height: 500px;
 }
 .JumboBackground {
-    background-image: url(/images/FingerLakesVineyard1.png);
+    background-image: url(../images/FingerLakesVineyard1.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
