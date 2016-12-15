@@ -9,41 +9,19 @@ wineData[3] = "http://services.wine.com/api/beta2/service.svc/json/catalog?searc
 wineData[4] = "http://services.wine.com/api/beta2/service.svc/json/catalog?search=Hazlitt+1852+Vineyards&size=1&apikey=0986681690919c5baef1226ff293310f";
 
 function buildProductList() {
-    $.getJSON(wineData[0], function(data) {
-        productList[0] = data.Products.List[0];
-        console.log("Found wine data for " + productList[0].Vineyard.Name);
-    }).error(function(e) {
-        console.log('Wine data not found.');
-        wineAPIError();
-    });
-    $.getJSON(wineData[1], function(data) {
-        productList[1] = data.Products.List[0];
-        console.log("Found wine data for " + productList[1].Vineyard.Name);
-    }).error(function(e) {
-        console.log('Wine data not found.');
-         wineAPIError();
-    });
-    $.getJSON(wineData[2], function(data) {
-        productList[2] = data.Products.List[0];
-        console.log("Found wine data for " + productList[2].Vineyard.Name);
-    }).error(function(e) {
-        console.log('Wine data not found.');
-         wineAPIError();
-    });
-    $.getJSON(wineData[3], function(data) {
-        productList[3] = data.Products.List[0];
-        console.log("Found wine data for " + productList[3].Vineyard.Name);
-    }).error(function(e) {
-        console.log('Wine data not found.');
-         wineAPIError();
-    });
-    $.getJSON(wineData[4], function(data) {
-        productList[4] = data.Products.List[0];
-        console.log("Found wine data for " + productList[4].Vineyard.Name);
-    }).error(function(e) {
-        console.log('Wine data not found.');
-         wineAPIError();
-    });
+   
+    for(var i = 0; i < wineData.length; i++){
+        
+        (function(i){
+            $.getJSON(wineData[i], function(data){
+                productList[i] = data.Products.List[0];
+            }).error(function(e) {
+                console.log('Wine data not found.');
+                wineAPIError();
+            });
+        })(i);
+    }
+
 }
 
 buildProductList();
